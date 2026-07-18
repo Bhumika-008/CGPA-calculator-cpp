@@ -1,35 +1,32 @@
-=====================================
-        🎓 CGPA CALCULATOR 🎓        
-=====================================
+=========================================
+         STUDENT GPA CALCULATOR
+=========================================
+Enter Number of Courses: 3
 
-Enter number of courses taken: 3
+----------- Course 1 -----------
+Enter Grade Point : 4
+Enter Credit Hours: 3
 
--------------------------------------
-         ENTER COURSE DETAILS        
--------------------------------------
+----------- Course 2 -----------
+Enter Grade Point : 3.5
+Enter Credit Hours: 4
 
-📘 Course 1
-   Grade (e.g., 4.0 for A): 3.5
-   Credit Hours: 3
-   ➤ Grade Points: 10.50
+----------- Course 3 -----------
+Enter Grade Point : 3
+Enter Credit Hours: 2
 
-📘 Course 2
-   Grade (e.g., 4.0 for A): 4.0
-   Credit Hours: 4
-   ➤ Grade Points: 16.00
 
-📘 Course 3
-   Grade (e.g., 4.0 for A): 3.0
-   Credit Hours: 3
-   ➤ Grade Points: 9.00
-
-=====================================
-             📊 RESULT 📊            
-=====================================
-Total Courses:           3
-Total Credits:           10
-Total Grade Points:      35.50
-FINAL CGPA:              3.55
-=====================================
-   🎉 Calculation Completed! 🎉      
-=====================================
+=========================================
+            COURSE DETAILS
+=========================================
+Course    Grade          Credits
+-----------------------------------------
+1         4.00           3.00
+2         3.50           4.00
+3         3.00           2.00
+=========================================
+Total Credits      : 9.00
+Total Grade Points : 32.00
+Semester GPA       : 3.56
+Overall CGPA       : 3.56
+=========================================
