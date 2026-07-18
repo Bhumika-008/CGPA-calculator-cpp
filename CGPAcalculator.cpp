@@ -2,56 +2,63 @@
 #include <iomanip>
 using namespace std;
 
-int main() {
-    int numCourses;
-    float grade, gradePoints;
-    int credit;
+int main()
+{
+    int n;
+    float grade, credit;
+    float totalCredits = 0, totalGradePoints = 0;
 
-    float totalGradePoints = 0.0;
-    int totalCredits = 0;
+    cout << "=========================================\n";
+    cout << "         STUDENT GPA CALCULATOR\n";
+    cout << "=========================================\n";
 
-    cout << "=====================================\n";
-    cout << "        🎓 CGPA CALCULATOR 🎓        \n";
-    cout << "=====================================\n\n";
+    cout << "Enter Number of Courses: ";
+    cin >> n;
 
-    cout << "Enter number of courses taken: ";
-    cin >> numCourses;
+    float grades[n], credits[n];
 
-    cout << "\n-------------------------------------\n";
-    cout << "         ENTER COURSE DETAILS        \n";
-    cout << "-------------------------------------\n";
+    // Input
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\n----------- Course " << i + 1 << " -----------\n";
+        cout << "Enter Grade Point : ";
+        cin >> grades[i];
 
-    for (int i = 1; i <= numCourses; i++) {
-        cout << "\n📘 Course " << i << endl;
-        cout << "   Grade (e.g., 4.0 for A): ";
-        cin >> grade;
-        cout << "   Credit Hours: ";
-        cin >> credit;
+        cout << "Enter Credit Hours: ";
+        cin >> credits[i];
 
-        gradePoints = grade * credit;
-
-        totalGradePoints += gradePoints;
-        totalCredits += credit;
-
-        cout << "   ➤ Grade Points: " << fixed << setprecision(2)
-             << gradePoints << endl;
+        totalCredits += credits[i];
+        totalGradePoints += grades[i] * credits[i];
     }
 
-    float cgpa = totalGradePoints / totalCredits;
+    float GPA = totalGradePoints / totalCredits;
+    float CGPA = GPA;
 
-    cout << "\n=====================================\n";
-    cout << "             📊 RESULT 📊            \n";
-    cout << "=====================================\n";
-    cout << left << setw(25) << "Total Courses:" << numCourses << endl;
-    cout << left << setw(25) << "Total Credits:" << totalCredits << endl;
-    cout << left << setw(25) << "Total Grade Points:" 
-         << fixed << setprecision(2) << totalGradePoints << endl;
-    cout << left << setw(25) << "FINAL CGPA:" 
-         << fixed << setprecision(2) << cgpa << endl;
+    // Output
+    cout << "\n\n=========================================\n";
+    cout << "            COURSE DETAILS\n";
+    cout << "=========================================\n";
 
-    cout << "=====================================\n";
-    cout << "   🎉 Calculation Completed! 🎉      \n";
-    cout << "=====================================\n";
+    cout << left << setw(10) << "Course"
+         << setw(15) << "Grade"
+         << setw(15) << "Credits" << endl;
+
+    cout << "-----------------------------------------\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << left << setw(10) << i + 1
+             << setw(15) << grades[i]
+             << setw(15) << credits[i] << endl;
+    }
+
+    cout << "=========================================\n";
+    cout << fixed << setprecision(2);
+    cout << "Total Credits      : " << totalCredits << endl;
+    cout << "Total Grade Points : " << totalGradePoints << endl;
+    cout << "Semester GPA       : " << GPA << endl;
+    cout << "Overall CGPA       : " << CGPA << endl;
+    cout << "=========================================\n";
 
     return 0;
 }
